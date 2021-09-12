@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SimpleCrude_StoreProcedure.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+    int Sl = 0;
+}
+
+<h1 class="text-info">Students Information</h1>
+<br />
+<p class="text-right">
+    <a asp-action="CreateAndEdit" class="btn btn-outline-primary btn-sm">Create New</a>
+</p>
+<p class="text-right">
+    <a asp-action="Print" id="btnPrint" class="text-light btn btn-danger btn-sm" target="_blank">Report</a>
+</p>
+<table class="table table-info table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th>#SL</th>
+            <th>@Html.DisplayNameFor(o => o.Name)</th>
+            <th>@Html.DisplayNameFor(o => o.Gender)</th>
+            <th>@Html.DisplayNameFor(o => o.Address)</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            Sl++;
+        <tr>
+            <td>@Sl</td>
+            <td>@item.Name</td>
+            <td>@item.Gender</td>
+            <td>@item.Address</td>
+
+           
+            <td>
+                <a asp-action="CreateAndEdit" asp-controller="Home" asp-route-id="@item.Id" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.Id" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<br />
+<br />
