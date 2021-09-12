@@ -52,21 +52,21 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.97135in</Width>
+                  <Width>1.0625in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.33594in</Width>
+                  <Width>1.42709in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.33594in</Width>
+                  <Width>1.42709in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.33594in</Width>
+                  <Width>1.42708in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.28125in</Height>
+                  <Height>0.32416in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -360,10 +360,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsStudent</DataSetName>
-            <Top>0.60292in</Top>
+            <Top>0.06944in</Top>
             <Left>0.35292in</Left>
-            <Height>0.5625in</Height>
-            <Width>4.97917in</Width>
+            <Height>0.60541in</Height>
+            <Width>5.34375in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -371,14 +371,74 @@
               <BackgroundColor>WhiteSmoke</BackgroundColor>
             </Style>
           </Tablix>
+          <Textbox Name="Textbox3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Created By:</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>0.9375in</Top>
+            <Left>2.405in</Left>
+            <Height>0.25in</Height>
+            <Width>0.80208in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="CreatedByName">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!CreatedByName.Value</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>CreatedByName</rd:DefaultName>
+            <Top>0.93056in</Top>
+            <Left>3.26958in</Left>
+            <Height>0.25in</Height>
+            <Width>1.44792in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>1.20833in</Height>
         <Style />
       </Body>
-      <Width>6.89458in</Width>
+      <Width>5.97792in</Width>
       <Page>
         <PageHeader>
-          <Height>1.18625in</Height>
+          <Height>1.22792in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -457,7 +517,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1in</Height>
+          <Height>0.63542in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -482,8 +542,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox10</rd:DefaultName>
-              <Top>0.53in</Top>
-              <Left>1.14458in</Left>
+              <Top>0.12375in</Top>
+              <Left>0.405in</Left>
               <Height>0.25in</Height>
               <Width>4.07292in</Width>
               <Style>
@@ -507,12 +567,14 @@
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>0.53in</Top>
-              <Left>5.75917in</Left>
+              <Top>0.12375in</Top>
+              <Left>4.69667in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <ZIndex>1</ZIndex>
@@ -533,10 +595,10 @@
             </Border>
           </Style>
         </PageFooter>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
+        <LeftMargin>0.5in</LeftMargin>
+        <RightMargin>0.5in</RightMargin>
+        <TopMargin>0.25in</TopMargin>
+        <BottomMargin>0.25in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>
@@ -546,6 +608,11 @@
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CreatedByName">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
@@ -558,6 +625,11 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>prm_1</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>CreatedByName</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

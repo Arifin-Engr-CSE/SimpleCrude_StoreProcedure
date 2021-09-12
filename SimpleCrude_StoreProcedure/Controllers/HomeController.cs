@@ -60,9 +60,10 @@ namespace SimpleCrude_StoreProcedure.Controllers
             string mimetype = "";
             int extension = 1;
             var path = $"{this._wEnv.WebRootPath}\\Reports\\Report.rdlc";
-
+            string userName = "Arifin";
             Dictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("prm_1", "RDLC Report");
+            parameters.Add("CreatedByName", userName);
             LocalReport localReport = new LocalReport(path);
             localReport.AddDataSource("dsStudent",dt);
 
@@ -77,10 +78,10 @@ namespace SimpleCrude_StoreProcedure.Controllers
             dt.Columns.Add("StudentName");
             dt.Columns.Add("Gender");
             dt.Columns.Add("Address");
-
+            List<Student> stList = DapperORM.ReturnList<Student>("StudentViewALL", null).ToList();
             DataRow row;
-            Student student = new Student() { Id=1,Name="Arifin",Gender="Male",Address="Magura"};
-            
+            foreach (Student student in stList)
+            {
                 row = dt.NewRow();
                 row["StudentId"] = student.Id;
                 row["StudentName"] = student.Name;
@@ -88,6 +89,7 @@ namespace SimpleCrude_StoreProcedure.Controllers
                 row["Address"] = student.Address;
 
                 dt.Rows.Add(row);
+            }
             
             return dt;
         }
